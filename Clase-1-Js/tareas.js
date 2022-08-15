@@ -8,7 +8,7 @@
 // (sin el signo "=", ni la doble barra del comentario, ni tu respuesta) 
 // y luego presionar enter, asi obtendras el resultado automaticamente)
 
-// 6 / "3" 
+// 6 / "3" a
 // "2" * "3" =
 // 4 + 5 + "px" =
 // "$" + 4 + 5 =
