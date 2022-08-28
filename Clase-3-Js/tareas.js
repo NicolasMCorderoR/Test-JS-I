@@ -5,6 +5,10 @@ function obtenerMayor(x, y) {
   // Devuelve el número más grande
   // Si son iguales, devuelve cualquiera de los dos
   // Tu código:
+  if (x == y || y == x)
+  {
+    return x;
+  }
   if (x > y)
   {
     return x;
@@ -13,10 +17,7 @@ function obtenerMayor(x, y) {
   {
     return y;
   }
-  if (x == y || y == x)
-  {
-    return x;
-  }
+  
 }
 
 function mayoriaDeEdad(edad) {
@@ -155,17 +156,17 @@ function fizzBuzz(numero) {
   // Si "numero" es divisible entre 5, devuelve "buzz"
   // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
   // De lo contrario, devuelve el numero
-  if (numero / 3)
+  if (numero % 3 == 0 && numero % 5 == 0)
+  {
+    return "fizzbuzz";
+  }
+  if (numero % 3 == 0)
   {
     return "fizz";
   }
-  if (numero / 5)
+  if (numero % 5 == 0)
   {
     return "buzz";
-  }
-  if (numero / 3 && numero / 5)
-  {
-    return "fizzbuzz";
   }
   else
   {
@@ -241,7 +242,7 @@ function esPrimo(numero) {
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
   // Tu código:
-  if (numero / 1  && numero / numero)
+  if (numero / numero && numero / 1 && numero != 0 && numero != 1)
   {
     return true;
   }
@@ -259,8 +260,9 @@ function doWhile(numero) {
   let cont = 0;
   do {
     cont ++;
-    return numero += 5;
+    numero += 5;
   } while (cont < 8);
+  return numero;
 }
 
 // No modificar nada debajo de esta línea, sino no correrán los test.
