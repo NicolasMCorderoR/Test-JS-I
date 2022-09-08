@@ -56,13 +56,14 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
-  let palabras2 = "";
-  for (let i = 0; i < palabras.length; i++)
-  {
-    palabras2 += palabras[i] + " "; 
-  }
-  palabras2 = palabras2.trimEnd();
-  return palabras2;
+  // let palabras2 = "";
+  // for (let i = 0; i < palabras.length; i++)
+  // {
+  //   palabras2 += palabras[i] + " "; 
+  // }
+  // palabras2 = palabras2.trimEnd();
+  // return palabras2;
+  return (palabras.join(" "));
 }
 
 function arrayContiene(array, elemento) {
@@ -83,11 +84,15 @@ function agregarNumeros(numeros) {
   // "array" debe ser una matriz de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
-  let sumatoria = 0;
-  for (let i = 0; i < numeros.length; i++)
-  {
-    sumatoria += numeros[i];
-  }
+  // let sumatoria = 0;
+  // for (let i = 0; i < numeros.length; i++)
+  // {
+  //   sumatoria += numeros[i];
+  // }
+  // return sumatoria;
+  let sumatoria = numeros.reduce(
+    (acumulador, actual) => acumulador + actual
+  );
   return sumatoria;
 }
 
@@ -95,12 +100,16 @@ function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
-  let promedio = 0;
-  for (let i = 0; i < resultadosTest.length; i++) 
-  {
-    promedio += resultadosTest[i];
-  }
-  promedio = promedio / (resultadosTest.length)
+  // let promedio = 0;
+  // for (let i = 0; i < resultadosTest.length; i++) 
+  // {
+  //   promedio += resultadosTest[i];
+  // }
+  // promedio = promedio / (resultadosTest.length)
+  // return promedio;
+  let promedio = resultadosTest.reduce(
+    (acumulador, actual) => acumulador + actual
+  ) / (resultadosTest.length);
   return promedio;
 }
 
@@ -117,6 +126,9 @@ function numeroMasGrande(numeros) {
     }
   }
   return mayor;
+  // let index = numeros[0];
+  // let mayor = numeros.filter(numero => numero > index);
+  // return mayor;
 }
 
 function cuentoElementos(arreglo){
@@ -186,6 +198,7 @@ function todosIguales(arreglo) {
   {
     return false;
   }
+  // return (arreglo.filter(caracter => caracter == arreglo[arreglo.length-1]));
 } 
 
 function mesesDelAño(array) {
@@ -193,37 +206,42 @@ function mesesDelAño(array) {
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
-  var store = 0, n_array = [];
-  for (let i = 0; i < array.length; i++)
-  {
-    if (array[i] == "Enero" || array[i] == "Marzo" || array[i] == "Noviembre")
-    {
-      n_array.push(array[i])
-      store ++;
-    }
-  }
-  if (store < 3 || store != 3)
-  {
-    return "No se encontraron los meses pedidos";
-  }
-  else
-  {
-    return n_array;
-  }
+  // var store = 0, n_array = [];
+  // for (let i = 0; i < array.length; i++)
+  // {
+  //   if (array[i] == "Enero" || array[i] == "Marzo" || array[i] == "Noviembre")
+  //   {
+  //     n_array.push(array[i])
+  //     store ++;
+  //   }
+  // }
+  // if (store < 3 || store != 3)
+  // {
+  //   return "No se encontraron los meses pedidos";
+  // }
+  // else
+  // {
+  //   return n_array;
+  // }
+  let n_array = array.filter(mes => mes == "Enero" || mes == "Marzo" || mes == "Noviembre");
+  if (n_array.length < 3) return "No se encontraron los meses pedidos";
+  else    return n_array;
 }
 
 function mayorACien(array) {
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
   // Tu código:
-  let n_array2 = [];
-  for (let i = 0; i < array.length; i++)
-  {
-      if (array[i] > 100)
-      {
-          n_array2.push(array[i]);
-      }
-  }
+  // let n_array2 = [];
+  // for (let i = 0; i < array.length; i++)
+  // {
+  //     if (array[i] > 100)
+  //     {
+  //         n_array2.push(array[i]);
+  //     }
+  // }
+  // return n_array2;
+  let n_array2 = array.filter(numero => numero > 100);
   return n_array2;
 }
 
