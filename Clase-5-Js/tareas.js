@@ -14,6 +14,7 @@ function counter() {
     numero++;
     console.log(numero);
   }
+  
 }
 
 function cacheFunction(cb) {
