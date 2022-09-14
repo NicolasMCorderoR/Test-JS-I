@@ -1,5 +1,7 @@
 'use strict'
 
+const hasOwnProperty = require("has");
+
 function counter() {
   // Retorna una funcion que cuando sea invocada retorne un valor creciente.
   // el primer valor deberia ser 1.
@@ -7,6 +9,11 @@ function counter() {
   // ejemplo: const newCounter = counter();
   // newCounter(); // 1
   // newCounter(); // 2
+  let numero = 0;
+  return function () {
+    numero++;
+    console.log(numero);
+  }
 }
 
 function cacheFunction(cb) {
